@@ -10,12 +10,12 @@
 int main(void) {
     uint8_t message[48];
     uint8_t iv[16];
-    uint8_t ciphertext[32];
+    uint8_t ciphertext[48];
     uint8_t plaintext[32];
   
     // iv || ciphertext
     recv_message(message);
-    
+
     memcpy(iv, message, 16);
     memcpy(ciphertext, message + 16, 48);
 
@@ -23,7 +23,4 @@ int main(void) {
 
     print_iv(iv);
     print_plaintext(plaintext);
-
 }
-
-
